@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic invoice generation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="refno()">
+   
+    <div class="invoice-container">
+        <h1 style="text-align: center;">MUMEG GLOBAL SERVICES AND GENERAL ENTERPRISES</h1>
+        <div class="invoice-header">
+            <div class="title-date">
+                <h2 class="title">INVOICE</h2>
+                <p class="date">01/02/23</p>
+            </div>
+            <div class="space"></div>
+            <!-- <p class="invoice-number">#08 2345</p> -->
+            <h2 class="title">INVOICENO:</h2>
+            <form action=""><input type="" id="ref" name="refnumber" value=""></form>
+        
+        </div>
+
+        <div class="invoice-body">
+            <table>
+                <thead>
+                    <th style="padding-left: 12px;">PRODUCT</th>
+                    <th>UNIT</th>
+                    <th>PRICE</th>
+                    <th>AMOUNT</th>
+                    <th style="text-align: right;">ACTION</th>
+                
+                </thead>
+                <TBody id="table-body">
+                    <tr class="single-row">
+                        <td><input type="text" placeholder="product name" class="product left"></td>
+                        <td><input type="number" placeholder="0" name="unit" class="unit" id="unit" onkeyup="getInput()"></td>
+                        <td><input type="number" placeholder="0" name="price" class="price" id="price" onkeyup="getInput()"></td>
+                        <td><input type="number" placeholder="0" name="amount" class="amount" id="amount" disabled></td>
+                        <td style="text-align: right;"><span class="material-icons">delete_outline</span></td>
+                    </tr>
+
+                    <tr style="padding-left: 20px;">
+                        <td class="dashed"><div class="float">
+                            <a href="#" class="float" id="add-row">
+                                <span class="material-icons plus">add</span>
+                            </a>
+                        </div>
+                    </td>
+                    <td class="dashed"></td>
+                    <td class="dashed"></td>
+                    <td class="dashed"></td>
+                    <td class="dashed"></td>
+                    </tr>
+                </TBody>
+            </table>
+            <div id="sum"><input type="text" placeholder="0.00" name="total" class="total" id="total"disabled></div>
+        </div>
+    </div>
+   
+    <script src="index.js"></script>
+</body>
+</html>
